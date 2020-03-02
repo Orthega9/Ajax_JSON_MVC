@@ -1,0 +1,109 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/Content/datatables.css" rel="stylesheet" />
+<link href="~/Content/jquery-ui.min.css" rel="stylesheet" />
+
+<h2>Index Docente</h2>
+
+<label>Ingrese modalidad contrato: </label>
+<select id="cboModalidad"></select>
+
+<br />
+<button onclick="abrirModalD(0)" type="button" class="btn btn-info " data-toggle="modal" data-target="#myModal">Agregar</button>
+
+<div id="tbDocente">
+
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <table style="width:80%; margin:auto">
+                    <tr>
+                        <td width="40%">ID Docente : </td>
+                        <td width="60%"><input type="text" id="txtIdDocente" readonly class="borrar"/></td>
+                    </tr>
+                    <tr>
+                        <td width="40%">Nombre Docente : </td>
+                        <td width="60%"><input type="text" id="txtNombreDocente"  class="borrar"/></td>
+                    </tr>
+                    <tr>
+                        <td width="40%">A. Paterno : </td>
+                        <td width="60%"><input type="text" id="txtAPaterno" class="borrar"/></td>
+                    </tr>
+                    <tr>
+                        <td width="40%">A. Materno : </td>
+                        <td width="60%"><input type="text" id="txtAMaterno" class="borrar"/></td>
+                    </tr>
+                    <tr>
+                        <td width="40%">Dirección : </td>
+                        <td width="60%"><input type="text" id="txtDireccion" class="borrar"/></td>
+                    </tr>
+                    <tr>
+                        <td width="40%">Telefono celular : </td>
+                        <td width="60%"><input type="number" id="txtTelefonoCelular"  class="borrar"/></td>
+                    </tr>
+                    <tr>
+                        <td width="40%">Telefono fijo: </td>
+                        <td width="60%"><input type="number" id="txtTelefonoFijo" class="borrar"/></td>
+                    </tr>
+                    <tr>
+                        <td width="40%">E-mail : </td>
+                        <td width="60%"><input type="email" id="txtEmail" class="borrar"/></td>
+                    </tr>
+                    <tr>
+                        <td width="40%">Sexo : </td>
+                        <td width="60%"><select id="cboSexoPopUp" class="borrar"></select></td>
+                    </tr>
+                    <tr>
+                        <td width="40%">Fecha Contrato : </td>
+                        <td width="60%"><input type="text" id="txtFechaContrato" readonly class="borrar"/></td>
+                    </tr>
+                    <tr>
+                        <td width="40%">Modalidad Contrato : </td>
+                        <td width="60%"><select id="cboModalidadContrato" class="borrar"></select></td>
+                    </tr>
+                    <tr>
+                        <td width="40%">Foto : </td>
+                        <td width="60%"><img  id="imgFoto" width="150" height="100" style="border:1px solid;" class="borrar"/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="file" value="..." id="btnFoto" /></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button onclick="AgregarDocente()" type="button" class="btn btn-success" data-dismiss="modal" id="btnAceptar">Aceptar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" id="btnCancelar">Cancelar</button>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/datatables.min.js"></script>
+<script src="~/Scripts/Docente.js"></script>
+<script src="~/Scripts/Alumno.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+
+
+
+

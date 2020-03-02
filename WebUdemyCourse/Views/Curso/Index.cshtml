@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<link href="~/Content/miEstilo.css" rel="stylesheet" />
+<link href="~/Content/datatables.css" rel="stylesheet" />
+<h2>Index Curso</h2>
+<label>Busqueda por curso:</label>
+<input type="text" id="txtBuscar" value="" />
+<input type="button" value="Buscar" id="btnBuscar" />
+<input type="button" value="Limpiar" id="btnLimpiar" />
+<br />
+<button type="button"  class="btn btn-info " data-toggle="modal" data-target="#myModal">Agregar</button>
+
+<div id="divTabla">
+
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <table style="width:80%; margin:auto">
+                    <tr>
+                        <td width="40%">ID Curso : </td>
+                        <td width="60%"><input type="text" id="txtIdCurso" readonly class="borrar "/></td>
+                    </tr>
+                    <tr>
+                        <td width="40%">Nombre Curso : </td>
+                        <td width="60%"><input type="text" id="txtNombreCurso" class="borrar obligatorio" /></td>
+                    </tr>
+                    <tr>
+                        <td width="40%">Descripción : </td>
+                        <td width="60%"><input type="text" id="txtDescripcionCurso" class="borrar obligatorio"/></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" onclick="AgregarCurso()" id="btnAceptar">Aceptar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" id="btnCancelar">Cancelar</button>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/Curso.js"></script>
+<script src="~/Scripts/datatables.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

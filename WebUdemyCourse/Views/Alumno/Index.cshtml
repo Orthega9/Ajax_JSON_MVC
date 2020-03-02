@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/Content/datatables.css" rel="stylesheet" />
+<link href="~/Content/jquery-ui.min.css" rel="stylesheet" />
+
+<h2>Index alumno</h2>
+<form class="form-inline">
+    <label>Seleccione sexo :</label>
+    <select id="cboSexo"></select>
+    <input type="button" value="listar" id="btnBuscar" class="btn btn-primary" />
+    <input type="button" name="name" value="Limpiar" id="btnLimpiar" class="btn btn-success" />
+</form>
+<br />
+<button onclick="abrirModal(0)" type="button" class="btn btn-info " data-toggle="modal" data-target="#myModal">Agregar</button>
+<br /><br />
+<div id="divTablaAlumno">
+
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <table style="width:80%; margin:auto">
+                    <tr>
+                        <td width="40%">ID Alumno : </td>
+                        <td width="60%"><input type="text" id="txtIdAlumno" readonly class="limpiar" /></td>
+                    </tr>
+                    <tr>
+                        <td width="40%">Nombre Alumno : </td>
+                        <td width="60%"><input type="text" id="txtNombreAlumno"  class="limpiar"/></td>
+                    </tr>
+                    <tr>
+                        <td width="40%">A. Paterno : </td>
+                        <td width="60%"><input type="text" id="txtAPaterno" class="limpiar"/></td>
+                    </tr>
+                    <tr>
+                        <td width="40%">A. Materno : </td>
+                        <td width="60%"><input type="text" id="txtAMaterno" class="limpiar" /></td>
+                    </tr>
+                    <tr>
+                        <td width="40%">Sexo : </td>
+                        <td width="60%"><select id="cboSexo2"></select></td>
+                    </tr>
+                    <tr>
+                        <td width="40%">Fecha Nacimiento : </td>
+                        <td width="60%"><input type="text" id="txtFechaNacimiento" class="limpiar" /></td>
+                    </tr>
+                    <tr>
+                        <td width="40%">Teléfono padre : </td>
+                        <td width="60%"><input type="number" id="txtTelPadre"  class="limpiar" /></td>
+                    </tr>
+                    <tr>
+                        <td width="40%">Telefono Madre : </td>
+                        <td width="60%"><input type="number" id="txtTelMadre" class="limpiar" /></td>
+                    </tr>
+                    <tr>
+                        <td width="40%">Numero Hermanos : </td>
+                        <td width="60%"><input type="number" id="txtNumHermanos" class="limpiar" /></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button onclick="Agregar()" type="button" class="btn btn-success" data-dismiss="modal" id="btnAceptar">Aceptar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" id="btnCancelar">Cancelar</button>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/datatables.min.js"></script>
+<script src="~/Scripts/Alumno.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
