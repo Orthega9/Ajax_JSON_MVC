@@ -63,7 +63,7 @@ namespace WebUdemyCourse.Controllers
                     nRegistrosAfectados = 1;
                 }
             }
-            catch (Exception ex)
+            catch 
             {
                 nRegistrosAfectados = 0;
             }

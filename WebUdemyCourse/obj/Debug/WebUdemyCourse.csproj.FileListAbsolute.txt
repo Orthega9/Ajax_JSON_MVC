@@ -72,3 +72,4 @@ C:\Users\Orthega\Source\Repos\SolWebUdemyCourse\WebUdemyCourse\obj\Debug\WebUdem
 C:\Users\Orthega\Source\Repos\SolWebUdemyCourse\WebUdemyCourse\obj\Debug\WebUdemyCourse.csproj.CopyComplete
 C:\Users\Orthega\Source\Repos\SolWebUdemyCourse\WebUdemyCourse\obj\Debug\WebUdemyCourse.dll
 C:\Users\Orthega\Source\Repos\SolWebUdemyCourse\WebUdemyCourse\obj\Debug\WebUdemyCourse.pdb
+C:\Users\Orthega\Source\Repos\SolWebUdemyCourse\WebUdemyCourse\obj\Debug\WebUdemyCourse.csprojAssemblyReference.cache

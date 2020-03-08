@@ -22,7 +22,8 @@ namespace WebUdemyCourse.Controllers
                          on gradoSeccion.IIDSECCION equals seccion.IIDSECCION
                          join grado in db.Grado
                          on gradoSeccion.IIDGRADO equals grado.IIDGRADO
-                         select new
+                         where gradoSeccion.BHABILITADO.Equals(1)
+                         select new 
                          {
                              gradoSeccion.IID,
                              NOMBREGRADO = grado.NOMBRE,
@@ -72,5 +73,54 @@ namespace WebUdemyCourse.Controllers
 
             return Json(lista, JsonRequestBehavior.AllowGet);
         }
+
+        public int GuardarDatos(GradoSeccion gs)
+        {
+            PruebaDataContext db = new PruebaDataContext();
+            int registrosAfectados = 0;
+            try
+            {
+                if (gs.IID == 0)
+                {
+                    db.GradoSeccion.InsertOnSubmit(gs);
+                    db.SubmitChanges();
+                    registrosAfectados = 1;
+                }
+                else
+                {
+                    var grado = db.GradoSeccion.Where(g => g.IID.Equals(gs.IID)).First();
+                    grado.IID = gs.IID;
+                    grado.IIDGRADO = gs.IIDGRADO;
+                    grado.IIDSECCION = gs.IIDSECCION;
+                    db.SubmitChanges();
+                    registrosAfectados = 1;
+                }
+            }
+            catch 
+            {
+                registrosAfectados = 0;
+            }
+            return registrosAfectados;
+        }
+
+        #region Elimina datos Grado-Seccion
+        public int EliminarGradoSeccion(int id)
+        {
+            PruebaDataContext db = new PruebaDataContext();
+            int registrosAfectdos = 0;
+            try
+            {
+                GradoSeccion gs = db.GradoSeccion.Where(g => g.IID.Equals(id)).FirstOrDefault();
+                gs.BHABILITADO = 0;
+                db.SubmitChanges();
+                registrosAfectdos = 1;
+            }
+            catch
+            {
+                registrosAfectdos = 0;
+            }
+            return registrosAfectdos;
+        }
+        #endregion
     }
 }

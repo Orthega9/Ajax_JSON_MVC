@@ -84,7 +84,7 @@ namespace WebUdemyCourse.Controllers
                 db.SubmitChanges();
                 registrosAfectados = 1;
             }
-            catch (Exception ex)
+            catch 
             {
                 registrosAfectados = 0;
             }
